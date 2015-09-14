@@ -1,0 +1,111 @@
+<hr>
+<div ng-show="tab.title=='Welcome'" class="container">
+	<h4>Approach</h4>
+	<p>Here's my approach for this mini-test: This Welcome tab should be active on load, and the form items are in the other three tabs. In the instructions, I am not sure what "Create a 2 tab horizontal setup with lorem ipsum content for both tabs" is meant to do, so I will add horizontal tabs below these vertical tabs. Thanks!
+	</p>
+</div>
+
+<div ng-show="tab.title=='Contact Info'">
+	<form name="contactInfo">
+		<div class="infoForm">
+	        <h4>Basic Contact Info</h4>
+			<label>First Name</label>
+      		<input class="form-control" type="text" name="firstname" ng-model="user.firstname" required="required" placeholder="Your First Name">
+			<label>Last Name</label>
+      		<input class="form-control" type="text" name="lastname" ng-model="user.lastname" required="required" placeholder="Your Last Name">
+			<label>Email Address</label>
+      		<input class="form-control" type="email" name="email" ng-model="user.email" required="required" placeholder="Your email address">
+      		<label>Phone Number</label>
+      		<input class="form-control" type="number" name="phone" ng-model="user.phone" ng-maxlength="10" ng-minlength="10"required="required" placeholder="Your phone number">
+      		<span class="warning" ng-show="((contactInfo.phone.$error.minlength || registration.phone.$error.maxlength) && contactInfo.phone.$dirty) "><i class="fa fa-exclamation-triangle"></i> phone number should be 10 digits - no dashes or parenthesis</span>
+      		<br>
+			<input class="btn btn-success" type="submit" value="Submit Contact Info">
+		</div>	
+	</form>	
+
+
+</div>
+
+<div ng-show="tab.title=='Favorite Music'">
+	<form>
+		<div class="musicForm">
+	        <h4>Favorite Music</h4>
+			<label>Select Your Favorite Genre of Music</label>
+      		<select ng-model="genre.selectedItem" ng-options="item.name for item in items" ng-change="someFunction()"></select>
+      		<br>
+      		<br>
+			<input class="btn btn-primary" type="submit" value="Submit Music Info">
+		</div>	
+	</form>	
+</div>
+
+<div ng-show="tab.title=='Dev Skills'">
+	<form>
+		<div class="devForm">
+	        <h4>Dev Skills</h4>
+			<p>Check your Dev Skills. Check as many as apply:</p>
+				<div class="row">
+					<div class="col-md-4">
+						<h5>JavaScript Frameworks</h5>
+						<hr>
+						<label>Angular:
+					      <input type="checkbox" ng-model="checkboxSkills.value1">
+					    </label><br>
+					    <label>Backbone:
+					      <input type="checkbox" ng-model="checkboxSkills.value2"
+					           ng-true-value="'YES'" ng-false-value="'NO'">
+					    </label><br>
+					    <label>Knockout:
+					      <input type="checkbox" ng-model="checkboxSkills.value3"
+					           ng-true-value="'YES'" ng-false-value="'NO'">
+					    </label><br>
+					    <label>React:
+					      <input type="checkbox" ng-model="checkboxSkills.value4"
+					           ng-true-value="'YES'" ng-false-value="'NO'">
+					    </label><br>
+					</div>
+					<div class="col-md-4">
+						<h5>HTML/CSS Related</h5>
+						<hr>
+						<label>Twitter Bootstrap:
+					      <input type="checkbox" ng-model="checkboxSkills.value5">
+					    </label><br>
+					    <label>Zurb Foundation:
+					      <input type="checkbox" ng-model="checkboxSkills.value6"
+					           ng-true-value="'YES'" ng-false-value="'NO'">
+					    </label><br>
+					    <label>HTML5 Boilerplate:
+					      <input type="checkbox" ng-model="checkboxSkills.value7"
+					           ng-true-value="'YES'" ng-false-value="'NO'">
+					    </label><br>
+					    <label>Sass or Less:
+					      <input type="checkbox" ng-model="checkboxSkills.value8"
+					           ng-true-value="'YES'" ng-false-value="'NO'">
+					    </label><br>
+					</div>
+					<div class="col-md-4">
+						<h5>Other</h5>
+						<hr>
+						<label>Grunt or Gulp:
+					      <input type="checkbox" ng-model="checkboxSkills.value9">
+					    </label><br>
+					    <label>Linux Command Line:
+					      <input type="checkbox" ng-model="checkboxSkills.value10"
+					           ng-true-value="'YES'" ng-false-value="'NO'">
+					    </label><br>
+					    <label>PHP:
+					      <input type="checkbox" ng-model="checkboxSkills.value11"
+					           ng-true-value="'YES'" ng-false-value="'NO'">
+					    </label><br>
+					    <label>WordPress or Drupal:
+					      <input type="checkbox" ng-model="checkboxSkills.value12"
+					           ng-true-value="'YES'" ng-false-value="'NO'">
+					    </label><br>
+					</div>  
+				</div>
+				<br>
+				<br>
+			<input class="btn btn-info" type="submit" value="Submit Dev Skills">
+		</div>	
+	</form>	
+</div>

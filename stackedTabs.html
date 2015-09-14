@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+<head>
+    <!-- Loading everything in the head since this is just a small mini-test -->
+    <!-- Load Bootstrap CSS -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Load Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Load Angular --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <!-- Load Angular Bootstrap UI -->
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.4.js"></script>
+    <!-- Custom Scripts -->
+    <script src="scripts/stackedTabs.js"></script>
+
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h2>Hello, Andrew!</h2>
+      <p><strong>This is just a simple Angular Bootstrap UI tab implementation for the angularDev mini-test, with a cool retro header image here.</strong> </p>
+      
+    </div>
+  </div>
+  <div class="container">
+    <h2 class="sectionTitle">Interview Tabs</h2>
+  </div>
+  <hr>
+  <div class="container">
+    <div ng-controller="TabsCtrl">
+      <tabset vertical="true" class="tabs-left">
+        <tab ng-repeat="tab in tabs" heading="{{tab.title}}" select="getMarkup($index)" active="tab.active" disable="tab.disabled">
+          <div ng-hide="!tabs.isLoaded">
+            <info></info>
+          </div>
+        </tab>
+
+      </tabset>
+
+
+
+    </div><!-- /TabsCtrl -->
+ </div>
+ <!-- end vertical tabs, begin horizontal tabs -->
+<hr>
+<hr>
+<hr>
+ <div class="container">
+  <h2>Horizontal Tabs</h2>
+  <p class="lead">Non- Bootstrap.UI implementation. Just standard Bootstrap:</p>
+ </div> 
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="nav active"><a href="#summary" data-toggle="tab">Summary</a></li>
+        <li class="nav"><a href="#lorem" data-toggle="tab">Lorem</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="summary">
+          <p>Hopefully this meets most of the requirements for the mini-test.</p>
+          <p>I only put any kind of validation on the contact info: All forms are required, the email has to have an @ in, and the phone number can only be numbers and also must be ten digits. I could have set up something like: disabled="createContact.$pristine || createContact.$invalid" on the submit button, but I didn't. Validation can get deep, quickly. I kept this simple</p>
+          <p>Comments in the JS file may help explain my approach with a few things.</p>
+          <p>I think that is it! Thanks Andrew!</p>
+        </div>
+        <div class="tab-pane fade" id="lorem">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero ipsam sit aspernatur asperiores perferendis necessitatibus, blanditiis aperiam ut commodi quaerat hic nam, repellat harum natus aut. Unde totam ab, omnis!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos fugiat consectetur illum quas. Neque suscipit dolore ipsa id enim nobis earum at aliquid ipsam, porro fuga, sint velit omnis cupiditate?</p>
+        </div>
+
+    </div>
+    <hr>
+
+</div>
+<footer></footer>
+</body>
+</html>
+
+
+
+
